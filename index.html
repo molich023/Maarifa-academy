@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Maarifa Academy — Free world-class tech education for Kenyan youth. Learn AI, Python, IoT, MS Office, Linux and more. Free certificates.">
+<title>Maarifa Academy | Free Tech Education for Kenyan Youth</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<style>
+/* ── PAGE-SPECIFIC ── */
+.hero-scroll { margin-top: 50px; font-family: var(--font-m); font-size: 12px; color: var(--muted2); letter-spacing: 1px; animation: slide-up 0.7s 0.6s ease both; display: flex; align-items: center; gap: 8px; }
+.hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--primary), transparent); }
+
+.path-pills { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+.path-pill { display: flex; align-items: center; gap: 8px; background: var(--surf); border: 1px solid var(--border2); border-radius: 50px; padding: 8px 18px 8px 10px; font-size: 14px; font-weight: 600; transition: all 0.25s; cursor: pointer; }
+.path-pill:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+.path-pill-icon { font-size: 20px; }
+
+.testimonial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 50px; }
+.testi-card { background: var(--surf); border: 1px solid var(--border2); border-radius: var(--r2); padding: 28px; position: relative; }
+.testi-card::before { content: '"'; position: absolute; top: 12px; right: 20px; font-family: var(--font-h); font-size: 64px; color: var(--primary); opacity: 0.12; line-height: 1; }
+.testi-text { font-size: 15px; line-height: 1.7; color: var(--muted); margin-bottom: 20px; font-style: italic; }
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; color: var(--dark); flex-shrink: 0; }
+.testi-name { font-weight: 700; font-size: 14px; }
+.testi-title { font-size: 12px; color: var(--muted); }
+
+.partners-strip { background: var(--dark2); border-top: 1px solid var(--border2); border-bottom: 1px solid var(--border2); padding: 28px 0; overflow: hidden; }
+.partners-inner { display: flex; gap: 48px; align-items: center; animation: scroll-partners 22s linear infinite; width: max-content; }
+@keyframes scroll-partners { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.partner-logo { display: flex; align-items: center; gap: 10px; color: var(--muted); font-weight: 700; font-size: 14px; white-space: nowrap; opacity: 0.55; transition: opacity 0.3s; }
+.partner-logo:hover { opacity: 1; }
+.partner-logo span:first-child { font-size: 22px; }
+
+.impact-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 50px; }
+.impact-card { background: var(--surf); border: 1px solid var(--border2); border-radius: var(--r2); padding: 32px 24px; text-align: center; }
+.impact-num { font-family: var(--font-h); font-size: 48px; font-weight: 800; color: var(--primary); display: block; line-height: 1; margin-bottom: 8px; }
+.impact-label { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-icon">⚡</span>
+      <span>Maarifa<span class="nav-logo-accent">Academy</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#why-ai">Why AI?</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#leaderboard">Leaderboard</a></li>
+      <li><a href="#how">How It Works</a></li>
+    </ul>
+    <div class="nav-cta" id="navCta">
+      <a href="pages/student-portal.html" class="btn btn-secondary btn-sm">Sign In</a>
+      <a href="pages/enroll.html" class="btn btn-primary btn-sm">Enroll Free 🚀</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-pill">🇰🇪 100% Free · No Fees · No Barriers · Built for Kenya</div>
+      <h1 class="hero-title">
+        Build Your<br>
+        <span class="gradient-text">Digital Future</span><br>
+        <span style="color:var(--muted);">Starting Today</span>
+      </h1>
+      <p class="hero-sub">
+        You finished high school — now what? Join Kenya's fastest-growing free tech academy. 
+        Master AI, Python, IoT, and computer skills. Get certified. Get hired. Shape Africa's future.
+      </p>
+      <div class="hero-actions">
+        <a href="pages/enroll.html" class="btn btn-primary btn-lg">Start Learning Free →</a>
+        <a href="#courses" class="btn btn-secondary btn-lg">Explore Courses</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="hero-stat-num" data-count="12">0</span>
+          <span class="hero-stat-label">Free Courses</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div>
+          <span class="hero-stat-num" data-count="200">0</span>
+          <span class="hero-stat-label">Hours of Content</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div>
+          <span class="hero-stat-num" data-count="100" data-suffix="%">0</span>
+          <span class="hero-stat-label">Always Free</span>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="hero-scroll-line"></div>
+        Scroll to explore
+      </div>
+    </div>
+
+    <div class="code-window">
+      <div class="cw-bar">
+        <div class="cw-dot cw-dot-r"></div>
+        <div class="cw-dot cw-dot-y"></div>
+        <div class="cw-dot cw-dot-g"></div>
+        <span class="cw-filename">hello_kenya.py</span>
+      </div>
+      <div class="cw-body">
+        <div class="cw-line"><span class="cw-ln">1</span><span><span class="kw">import</span> <span class="mod">futureminds</span></span></div>
+        <div class="cw-line"><span class="cw-ln">2</span><span><span class="kw">from</span> <span class="mod">kenya</span> <span class="kw">import</span> <span class="vr">youth</span></span></div>
+        <div class="cw-line"><span class="cw-ln">3</span><span></span></div>
+        <div class="cw-line"><span class="cw-ln">4</span><span><span class="kw">def</span> <span class="fn">build_africa</span>(student):</span></div>
+        <div class="cw-line"><span class="cw-ln">5</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vr">skills</span> <span class="op">=</span> [</span></div>
+        <div class="cw-line"><span class="cw-ln">6</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">"AI"</span>, <span class="st">"Python"</span>, <span class="st">"IoT"</span>,</span></div>
+        <div class="cw-line"><span class="cw-ln">7</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">"Web Dev"</span>, <span class="st">"Linux"</span></span></div>
+        <div class="cw-line"><span class="cw-ln">8</span><span>&nbsp;&nbsp;&nbsp;&nbsp;]</span></div>
+        <div class="cw-line"><span class="cw-ln">9</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vr">cost</span> <span class="op">=</span> <span class="nm">0</span>  <span class="cm"># Always free!</span></span></div>
+        <div class="cw-line"><span class="cw-ln">10</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="st">"🚀 Ready for the world!"</span></span></div>
+        <div class="cw-line"><span class="cw-ln">11</span><span></span></div>
+        <div class="cw-line"><span class="cw-ln">12</span><span><span class="fn cursor">build_africa</span>(<span class="st">"you"</span>)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARTNERS / POWERED BY ══ -->
+<div class="partners-strip">
+  <div class="partners-inner">
+    <div class="partner-logo"><span>🐧</span>Linux Foundation</div>
+    <div class="partner-logo"><span>🎓</span>Harvard CS50</div>
+    <div class="partner-logo"><span>📊</span>Kaggle Learn</div>
+    <div class="partner-logo"><span>🔥</span>freeCodeCamp</div>
+    <div class="partner-logo"><span>🪟</span>Microsoft Learn</div>
+    <div class="partner-logo"><span>🌐</span>Cisco NetAcad</div>
+    <div class="partner-logo"><span>🔵</span>Google Certificates</div>
+    <div class="partner-logo"><span>☁️</span>Supabase</div>
+    <div class="partner-logo"><span>🏗️</span>Netlify</div>
+    <!-- duplicate for seamless loop -->
+    <div class="partner-logo"><span>🐧</span>Linux Foundation</div>
+    <div class="partner-logo"><span>🎓</span>Harvard CS50</div>
+    <div class="partner-logo"><span>📊</span>Kaggle Learn</div>
+    <div class="partner-logo"><span>🔥</span>freeCodeCamp</div>
+    <div class="partner-logo"><span>🪟</span>Microsoft Learn</div>
+    <div class="partner-logo"><span>🌐</span>Cisco NetAcad</div>
+    <div class="partner-logo"><span>🔵</span>Google Certificates</div>
+    <div class="partner-logo"><span>☁️</span>Supabase</div>
+    <div class="partner-logo"><span>🏗️</span>Netlify</div>
+  </div>
+</div>
+
+<!-- ══ WHY AI / OPPORTUNITY ══ -->
+<section class="why-section" id="why-ai">
+  <div class="container">
+    <span class="section-eyebrow">The Opportunity</span>
+    <h2 class="section-title">Why AI & Tech Skills<br><span class="gradient-text">Matter Right Now</span></h2>
+    <p class="section-sub">The world is changing faster than ever. These skills aren't just for Silicon Valley — Kenya is becoming a global tech hub and the jobs of tomorrow are being created today. You can be part of it.</p>
+
+    <div class="why-grid">
+      <div class="why-card featured reveal">
+        <span class="why-icon">🤖</span>
+        <h3>Artificial Intelligence</h3>
+        <p>AI is transforming every sector — healthcare, agriculture, finance, education. By 2030, 70% of jobs will require AI literacy. Kenya's tech sector is growing faster than most of the world.</p>
+        <div class="why-stat">Est. 97 million jobs created globally by AI</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">📡</span>
+        <h3>Internet of Things (IoT)</h3>
+        <p>Smart farms, smart cities, connected devices. Kenya's agricultural revolution will be powered by IoT sensors and data analytics. Be the engineer who builds the next M-Pesa of agriculture.</p>
+        <div class="why-stat">50 billion connected devices by 2030</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🐍</span>
+        <h3>Python & Programming</h3>
+        <p>Python is the #1 programming language worldwide. From web apps to machine learning to data analysis — one language opens infinite doors. And it's beginner-friendly, starting from total zero.</p>
+        <div class="why-stat">#1 most in-demand skill globally (2024)</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">💼</span>
+        <h3>MS Office & Digital Literacy</h3>
+        <p>Every modern workplace needs digital skills. Master Excel, Word, PowerPoint and become the most productive person in any office, NGO, government department, or company you walk into.</p>
+        <div class="why-stat">Required in 80% of all job listings</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🐧</span>
+        <h3>Linux & Open Source</h3>
+        <p>Linux powers 96% of the world's servers, all Android phones, and the entire cloud. Understanding it gives you an enormous competitive advantage that almost no fresh graduate has. That advantage is yours.</p>
+        <div class="why-stat">Powers 96% of the world's servers</div>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🌍</span>
+        <h3>Remote Work = Global Income</h3>
+        <p>Tech skills mean you can work for companies in the US, UK, Germany or UAE — from Nairobi, Kisumu, Mombasa or Kakamega. Earn global salaries while living in Kenya. No visa required.</p>
+        <div class="why-stat">Remote tech jobs grew 300% since 2020</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COURSES ══ -->
+<section class="courses-section" id="courses">
+  <div class="container">
+    <span class="section-eyebrow">What You'll Learn</span>
+    <h2 class="section-title">Choose Your <span class="gradient-text">Learning Path</span></h2>
+    <p class="section-sub">12 structured courses with videos, downloadable PDFs, module quizzes, and final exams. Learn at your pace. Completely free. Get a verifiable certificate.</p>
+
+    <div class="tabs-wrapper">
+      <button class="tab-btn active" data-tab="computer">💻 Computer Packages</button>
+      <button class="tab-btn" data-tab="ai">🤖 AI & Technology</button>
+      <button class="tab-btn" data-tab="coding">🐍 Coding & Dev</button>
+    </div>
+
+    <!-- Computer Packages -->
+    <div class="tab-panel active" id="tab-computer">
+      <div class="courses-grid">
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#1B5FBF,#2E86DE)">
+            <span class="cc-icon">📝</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Microsoft Word Mastery</div>
+            <div class="cc-desc">From typing documents to advanced formatting, mail merge, and professional reports. Used in every office in Kenya.</div>
+            <div class="cc-meta"><span>📚 8 Modules</span><span>⏱️ 12 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=ms-word" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#1A7431,#27AE60)">
+            <span class="cc-icon">📊</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Microsoft Excel & Data</div>
+            <div class="cc-desc">Spreadsheets, formulas, pivot tables, charts. Excel is used in every business on earth. Master it and you're indispensable.</div>
+            <div class="cc-meta"><span>📚 10 Modules</span><span>⏱️ 15 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=ms-excel" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#B03A2E,#E74C3C)">
+            <span class="cc-icon">🖥️</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">PowerPoint & Presentations</div>
+            <div class="cc-desc">Design stunning presentations. Communicate ideas clearly and professionally with animation, charts, and storytelling.</div>
+            <div class="cc-meta"><span>📚 6 Modules</span><span>⏱️ 8 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=ms-powerpoint" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#5B2C6F,#9B59B6)">
+            <span class="cc-icon">🌐</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Internet & Digital Literacy</div>
+            <div class="cc-desc">Email, internet safety, cloud storage, Google Workspace, and staying safe online in a digital-first world.</div>
+            <div class="cc-meta"><span>📚 5 Modules</span><span>⏱️ 6 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=internet-basics" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Courses -->
+    <div class="tab-panel" id="tab-ai">
+      <div class="courses-grid">
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#0D1B2A,#1B4F72)">
+            <span class="cc-icon">🤖</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Introduction to AI</div>
+            <div class="cc-desc">What is AI? Machine learning, neural networks, and real-world AI in Africa. No coding required for this course.</div>
+            <div class="cc-meta"><span>📚 10 Modules</span><span>⏱️ 20 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=ai-intro" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#1A1A2E,#E94560)">
+            <span class="cc-icon">🧠</span><span class="cc-level">Intermediate</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Machine Learning Fundamentals</div>
+            <div class="cc-desc">Supervised & unsupervised learning, decision trees, regression, and building your first ML model with Python.</div>
+            <div class="cc-meta"><span>📚 12 Modules</span><span>⏱️ 25 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=ml-basics" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#0B3D0B,#27AE60)">
+            <span class="cc-icon">📡</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Internet of Things (IoT)</div>
+            <div class="cc-desc">Smart devices, sensors, Arduino, Raspberry Pi. Build projects for smart agriculture and smart homes in Kenya.</div>
+            <div class="cc-meta"><span>📚 9 Modules</span><span>⏱️ 18 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=iot-basics" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#2C1654,#7D3C98)">
+            <span class="cc-icon">🛠️</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">AI Tools for Work & Life</div>
+            <div class="cc-desc">ChatGPT, Gemini, Midjourney, Canva AI — use AI tools to be 10× more productive. No coding needed.</div>
+            <div class="cc-meta"><span>📚 7 Modules</span><span>⏱️ 10 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=ai-tools" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coding Courses -->
+    <div class="tab-panel" id="tab-coding">
+      <div class="courses-grid">
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#1C3144,#3498DB)">
+            <span class="cc-icon">🐍</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Python Programming</div>
+            <div class="cc-desc">Start from absolute zero. Variables, loops, functions, real projects. The world's most popular and beginner-friendly language.</div>
+            <div class="cc-meta"><span>📚 15 Modules</span><span>⏱️ 30 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=python-basics" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#7B3F00,#E67E22)">
+            <span class="cc-icon">🌐</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Web Development</div>
+            <div class="cc-desc">HTML, CSS, JavaScript. Build and deploy your first website from scratch. Project-based with portfolio output.</div>
+            <div class="cc-meta"><span>📚 12 Modules</span><span>⏱️ 24 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=web-basics" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#1B1B1B,#555)">
+            <span class="cc-icon">🐧</span><span class="cc-level">Beginner</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Linux Fundamentals</div>
+            <div class="cc-desc">Command line, file system, shell scripting. Linux powers the internet — become one of the rare Kenyans who commands it.</div>
+            <div class="cc-meta"><span>📚 10 Modules</span><span>⏱️ 16 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=linux-basics" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+        <div class="course-card reveal">
+          <div class="cc-header" style="background:linear-gradient(135deg,#0F3460,#533483)">
+            <span class="cc-icon">🗄️</span><span class="cc-level">Intermediate</span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-title">Databases & SQL</div>
+            <div class="cc-desc">Store and query data. SQL is the language every developer must know. Build real databases with hands-on projects.</div>
+            <div class="cc-meta"><span>📚 8 Modules</span><span>⏱️ 14 hrs</span><span>📄 Certificate</span></div>
+            <div class="cc-tags"><span class="cc-tag">📹 Video</span><span class="cc-tag">📥 PDF</span><span class="cc-tag">✅ Quiz</span><span class="cc-tag">🏆 Exam</span></div>
+            <a href="pages/course.html?id=databases" class="cc-btn">Start Course →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FREE EXTERNAL RESOURCES ══ -->
+<section class="resources-section" id="resources">
+  <div class="container">
+    <span class="section-eyebrow">External Free Trainings</span>
+    <h2 class="section-title">More World-Class<br><span class="gradient-text">Free Resources</span></h2>
+    <p class="section-sub">We've curated the best free platforms on the internet. Supplement your learning with globally recognised courses and certifications — all free.</p>
+
+    <div class="res-grid">
+      <a href="https://training.linuxfoundation.org/resources/" target="_blank" rel="noopener" class="res-card reveal">
+        <div class="res-logo">🐧</div>
+        <div class="res-info"><h4>Linux Foundation</h4><p>Free Linux system admin & DevOps courses + globally recognized certs</p><span class="badge badge-success">Free Courses Available</span></div>
+        <span class="res-arrow">→</span>
+      </a>
+      <a href="https://www.kaggle.com/learn" target="_blank" rel="noopener" class="res-card reveal">
+        <div class="res-logo">📊</div>
+        <div class="res-info"><h4>Kaggle Learn</h4><p>Python, ML, SQL, Data Viz — 100% free micro-courses with certificates</p><span class="badge badge-success">100% Free Certs</span></div>
+        <span class="res-arrow">→</span>
+      </a>
+      <a href="https://cs50.harvard.edu/" target="_blank" rel="noopener" class="res-card reveal">
+        <div class="res-logo">🎓</div>
+        <div class="res-info"><h4>Harvard CS50</h4><p>World's most popular intro to computer science — from Harvard, free forever</p><span class="badge badge-primary">Harvard · Free</span></div>
+        <span class="res-arrow">→</span>
+      </a>
+      <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener" class="res-card reveal">
+        <div class="res-logo">🔥</div>
+        <div class="res-info"><h4>freeCodeCamp</h4><p>Full-stack web dev, Python, ML — free forever, community-driven, certificates</p><span class="badge badge-warning">Always Free</span></div>
+        <span class="res-arrow">→</span>
+      </a>
+      <a href="https://learn.microsoft.com/en-us/training/" target="_blank" rel="noopener" class="res-card reveal">
+        <div class="res-logo">🪟</div>
+        <div class="res-info"><h4>Microsoft Learn</h4><p>Azure, AI, Python, Office 365 — official Microsoft training, free to start</p><span class="badge badge-primary">Microsoft Official</span></div>
+        <span class="res-arrow">→</span>
+      </a>
+      <a href="https://www.netacad.com/" target="_blank" rel="noopener" class="res-card reveal">
+        <div class="res-logo">🌐</div>
+        <div class="res-info"><h4>Cisco NetAcad</h4><p>Networking fundamentals, Cybersecurity, Python — industry-standard training</p><span class="badge badge-accent">Industry Standard</span></div>
+        <span class="res-arrow">→</span>
+      </a>
+      <a href="https://grow.google/certificates/" target="_blank" rel="noopener" class="res-card reveal">
+        <div class="res-logo">🔵</div>
+        <div class="res-info"><h4>Google Career Certificates</h4><p>IT Support, Data Analytics, Cybersecurity — Google-backed industry certificates</p><span class="badge badge-primary">Google Backed</span></div>
+        <span class="res-arrow">→</span>
+      </a>
+      <a href="https://www.elementsofai.com/" target="_blank" rel="noopener" class="res-card reveal">
+        <div class="res-logo">🤖</div>
+        <div class="res-info"><h4>Elements of AI (Finland)</h4><p>Free AI basics course from University of Helsinki. Beginner-friendly, no maths needed</p><span class="badge badge-success">University · Free</span></div>
+        <span class="res-arrow">→</span>
+      </a>
+      <a href="https://replit.com/" target="_blank" rel="noopener" class="res-card reveal">
+        <div class="res-logo">💻</div>
+        <div class="res-info"><h4>Replit — Code Online</h4><p>Code Python, JS, HTML and 50+ languages in your browser. No installation needed</p><span class="badge badge-dark">Browser-based IDE</span></div>
+        <span class="res-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="how-section" id="how">
+  <div class="container">
+    <span class="section-eyebrow">The Process</span>
+    <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+
+    <div class="steps-row">
+      <div class="step reveal">
+        <div class="step-num-wrap active-step">01</div>
+        <h3>Enroll Free</h3>
+        <p>Sign up with name, email and phone. No fees, no credit card, no catches. Just your ambition and any device.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num-wrap">02</div>
+        <h3>Learn Your Way</h3>
+        <p>Watch videos, download PDFs, read references. Study from your phone, anywhere, anytime. No schedule required.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num-wrap">03</div>
+        <h3>Quizzes & Exam</h3>
+        <p>Test your knowledge with module quizzes after each lesson, then take a comprehensive final exam. Pass at 70%+.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num-wrap">04</div>
+        <h3>Get Certified</h3>
+        <p>Receive a verifiable digital certificate with a unique QR code. Share with employers, LinkedIn, anywhere in the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LEADERBOARD ══ -->
+<section class="lb-section" id="leaderboard">
+  <div class="container">
+    <span class="section-eyebrow">Top Students</span>
+    <h2 class="section-title">Student <span class="gradient-text">Leaderboard</span></h2>
+    <p class="section-sub">Our top performers. Complete courses, ace quizzes, and earn your spot. Be the first name on this board!</p>
+
+    <div class="lb-table" style="margin-top:48px;">
+      <div class="lb-head">
+        <span>Rank</span>
+        <span>Student</span>
+        <span>Courses Done</span>
+        <span>Points</span>
+        <span>Certificates</span>
+      </div>
+      <div class="lb-empty">
+        <div class="lb-empty-icon">🏆</div>
+        <h4>Be the First Champion!</h4>
+        <p>Enroll today, complete your first course, and claim the #1 spot on this leaderboard. Your name could be here.</p>
+        <a href="pages/enroll.html" class="btn btn-primary">Enroll Free & Claim #1 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPACT / POTENTIAL ══ -->
+<section style="padding:110px 0;">
+  <div class="container">
+    <span class="section-eyebrow">Our Vision</span>
+    <h2 class="section-title">Education Is<br><span class="gradient-text">The Great Equaliser</span></h2>
+    <p class="section-sub">It doesn't matter where you grew up, which school you attended, or how much money your family has. If you have a device and the will to learn, we have the courses — absolutely free.</p>
+
+    <div class="impact-row">
+      <div class="impact-card reveal">
+        <span class="impact-num">47</span>
+        <div class="impact-label">Counties across Kenya — we're open to everyone</div>
+      </div>
+      <div class="impact-card reveal">
+        <span class="impact-num">12</span>
+        <div class="impact-label">Expert-designed courses ready to start today</div>
+      </div>
+      <div class="impact-card reveal">
+        <span class="impact-num">0</span>
+        <div class="impact-label">Shillings it costs — free forever, no hidden fees</div>
+      </div>
+      <div class="impact-card reveal">
+        <span class="impact-num" style="font-size:36px;">∞</span>
+        <div class="impact-label">Opportunities waiting for skilled youth in tech</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section style="padding:0 0 110px;">
+  <div class="container">
+    <span class="section-eyebrow">Built For You</span>
+    <h2 class="section-title">Our <span class="gradient-text">Promise</span></h2>
+
+    <div class="testimonial-grid">
+      <div class="testi-card reveal">
+        <div class="testi-text">This platform was built for the Kenyan youth who finished high school and wants more. Technology is the great equaliser. These skills can change your life.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">FM</div>
+          <div><div class="testi-name">Maarifa Academy</div><div class="testi-title">Our founding promise</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-text">You don't need to go to university to get tech skills. The best programmers and AI engineers in Kenya are self-taught. We give you the structured path to get there.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🎯</div>
+          <div><div class="testi-name">The Academy Team</div><div class="testi-title">Our curriculum philosophy</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-text">From Turkana to Mombasa, from Kisumu to Nairobi — every Kenyan youth deserves access to world-class education. That's why every course on this platform is, and will always be, free.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🌍</div>
+          <div><div class="testi-name">Our Commitment</div><div class="testi-title">To every Kenyan county</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-orb-1"></div>
+      <div class="cta-orb-2"></div>
+      <h2>Your Future Starts<br><span class="gradient-text">Right Now</span></h2>
+      <p>12 courses. 200+ hours of learning. Free certificates. All for you.</p>
+      <div class="cta-actions">
+        <a href="pages/enroll.html" class="btn btn-primary btn-lg">🚀 Enroll Free Today</a>
+        <a href="pages/student-portal.html" class="btn btn-secondary btn-lg">Already enrolled? Sign In</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo"><span class="nav-logo-icon">⚡</span><span>Maarifa<span class="nav-logo-accent">Academy</span></span></div>
+        <p>Free world-class technology education for Kenyan youth and the next generation of Africa's innovators. No fees. No barriers. Just learning.</p>
+        <div class="footer-contact">
+          <p>📞 0736-340024</p>
+          <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="224b4c444d624457565750474f4b4c465143414346474f5b0c414d0c4947">[email&#160;protected]</a></p>
+          <p>🌍 Serving all 47 counties of Kenya</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Our Courses</h4>
+        <ul>
+          <li><a href="pages/course.html?id=ms-word">MS Word</a></li>
+          <li><a href="pages/course.html?id=ms-excel">MS Excel</a></li>
+          <li><a href="pages/course.html?id=ai-intro">Intro to AI</a></li>
+          <li><a href="pages/course.html?id=python-basics">Python Programming</a></li>
+          <li><a href="pages/course.html?id=iot-basics">IoT</a></li>
+          <li><a href="pages/course.html?id=linux-basics">Linux</a></li>
+          <li><a href="pages/course.html?id=web-basics">Web Dev</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="pages/enroll.html">Enroll Free</a></li>
+          <li><a href="pages/student-portal.html">Student Portal</a></li>
+          <li><a href="#leaderboard">Leaderboard</a></li>
+          <li><a href="pages/verify-certificate.html">Verify Certificate</a></li>
+          <li><a href="pages/admin.html">Admin Panel</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Free Resources</h4>
+        <ul>
+          <li><a href="https://training.linuxfoundation.org" target="_blank">Linux Foundation</a></li>
+          <li><a href="https://www.kaggle.com/learn" target="_blank">Kaggle Learn</a></li>
+          <li><a href="https://cs50.harvard.edu" target="_blank">Harvard CS50</a></li>
+          <li><a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a></li>
+          <li><a href="https://learn.microsoft.com" target="_blank">Microsoft Learn</a></li>
+          <li><a href="https://www.netacad.com" target="_blank">Cisco NetAcad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Maarifa Academy. Made with ❤️ for Kenyan youth. All courses are free.</p>
+      <p>Powered by <a href="https://supabase.com" target="_blank">Supabase</a> · Hosted on <a href="ht

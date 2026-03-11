@@ -267,7 +267,7 @@ create policy "Admins can read all quiz attempts"
 -- ────────────────────────────────────────────────────────────────
 create table if not exists public.certificates (
   id           uuid primary key default uuid_generate_v4(),
-  cert_id      text not null unique,   -- 'FMA-2026-PYTHON-A8K2P1'
+  cert_id      text not null unique,   -- 'MAA-2026-PYTHON-A8K2P1'
   student_id   uuid references public.profiles(id) on delete set null,
   student_name text not null,          -- denormalized for display
   course_id    text references public.courses(id) on delete set null,
@@ -310,8 +310,8 @@ begin
       select full_name into s_name from public.profiles where id = new.student_id;
       select title into c_name from public.courses where id = new.course_id;
 
-      -- Generate cert ID: FMA-YEAR-COURSECODE-RANDOM
-      new_cert_id := 'FMA-' ||
+      -- Generate cert ID: MAA-YEAR-COURSECODE-RANDOM
+      new_cert_id := 'MAA-' ||
         extract(year from now())::text || '-' ||
         upper(substring(replace(new.course_id, '-', ''), 1, 6)) || '-' ||
         upper(substring(md5(new.student_id::text || new.course_id || now()::text), 1, 6));
@@ -359,9 +359,9 @@ create or replace view public.leaderboard as
 -- ────────────────────────────────────────────────────────────────
 insert into public.certificates (cert_id, student_name, course_id, course_name, score_pct, issued_at)
 values
-  ('FMA-2026-MSEXCE-A8K2P1', 'Jane Wanjiku Mwangi', 'ms-excel',  'Microsoft Excel & Data Analysis', 88, '2026-03-01 10:00:00+03'),
-  ('FMA-2026-DATABA-B9L3Q2', 'Brian Kamau Njoroge', 'databases', 'Databases & SQL',                  92, '2026-02-15 14:30:00+03'),
-  ('FMA-2026-PYTHON-C7M4R3', 'Brian Kamau Njoroge', 'python-basics','Python Programming',            74, '2026-03-05 09:00:00+03')
+  ('MAA-2026-MSEXCE-A8K2P1', 'Jane Wanjiku Mwangi', 'ms-excel',  'Microsoft Excel & Data Analysis', 88, '2026-03-01 10:00:00+03'),
+  ('MAA-2026-DATABA-B9L3Q2', 'Brian Kamau Njoroge', 'databases', 'Databases & SQL',                  92, '2026-02-15 14:30:00+03'),
+  ('MAA-2026-PYTHON-C7M4R3', 'Brian Kamau Njoroge', 'python-basics','Python Programming',            74, '2026-03-05 09:00:00+03')
 on conflict (cert_id) do nothing;
 
 -- ────────────────────────────────────────────────────────────────
@@ -395,7 +395,7 @@ create index if not exists idx_profiles_points        on public.profiles(points 
 -- Next steps:
 --   1. Go to Authentication → Settings → Enable Email signup
 --   2. Set up Storage buckets (see above)
---   3. Copy Project URL + Anon Key into js/app.js (FM_CONFIG)
+--   3. Copy Project URL + Anon Key into js/app.js (MA_CONFIG)
 --   4. To create your first admin: run this query replacing the UUID:
 --      UPDATE profiles SET role = 'admin' WHERE email = 'your@email.com';
 -- ────────────────────────────────────────────────────────────────
