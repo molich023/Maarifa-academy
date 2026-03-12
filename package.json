@@ -1,0 +1,10 @@
+{
+  "name": "maarifa-academy",
+  "version": "1.0.0",
+  "description": "Maarifa Academy — Free tech education for Kenyan youth",
+  "author": "Randy Voti <molich60@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@netlify/blobs": "^7.0.0"
+  }
+}

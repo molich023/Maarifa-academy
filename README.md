@@ -96,8 +96,8 @@ const MA_CONFIG = {
 ---
 
 ## 📞 Contact Information
-- **Phone:** 0736-340024
-- **Email:** info@maarifaacademy.co.ke
+- **Phone:** 0704-658022
+- **Email:** molich60@gmail.com
 - **GitHub:** github.com/molich023/maarifa
 
 ---
@@ -126,7 +126,7 @@ const MA_CONFIG = {
 | Role | Email | Password |
 |---|---|---|
 | Student | jane@demo.com | demo1234 |
-| Admin | admin@maarifaacademy.co.ke | admin123 |
+| Admin | Randy.voti@owasp.org | admin123 |
 
 **Demo Certificate IDs (for verification page):**
 - `MAA-2026-MSEXCE-A8K2P1` — Jane W., Excel, 88%
